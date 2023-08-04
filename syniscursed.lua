@@ -52,6 +52,20 @@ local Button = MiscTab:CreateButton({
 })
 
 local Button = MiscTab:CreateButton({
+	Name = "🧍Starter World🧍",
+	Callback = function()
+		game:GetService("ReplicatedStorage").Events.Teleport:FireServer("Spawn")
+	end,
+})
+
+local Button = MiscTab:CreateButton({
+	Name = "🌀Magic World🌀",
+	Callback = function()
+		game:GetService("ReplicatedStorage").Events.Teleport:FireServer("Magic")
+	end,
+})
+
+local Button = MiscTab:CreateButton({
 	Name = "🦕Jurassic World🦕",
 	Callback = function()
 		game:GetService("ReplicatedStorage").Events.Teleport:FireServer("Jurassic")
