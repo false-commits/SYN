@@ -18,7 +18,7 @@ local MainTab = Window:CreateTab("🏠 Auto Farm", nil)
 local MainSection = MainTab:CreateSection("Main")
 
 local Button = MainTab:CreateButton({
-	Name = "🖱️Fast Clicks🖱️",
+	Name = "🖱️Fast Clicks",
 	Callback = function()
 		_G.enable = true;
 		while _G.enable == true do
@@ -29,7 +29,7 @@ local Button = MainTab:CreateButton({
 })
 
 local Button = MainTab:CreateButton({
-	Name = "🌴Max World Boost🌴",
+	Name = "🌴Max World Boost",
 	Callback = function()
 		_G.enable = true;
 		while _G.enable == true do
@@ -41,32 +41,39 @@ local Button = MainTab:CreateButton({
 	end,
 })
 
+local Button = MainTab:CreateButton({
+	Name = "⬆️Mastery Rank Up",
+	Callback = function()
+		game:GetService("ReplicatedStorage").Functions.IncreaseMastery:InvokeServer()
+	end,
+})
+
 local MiscTab = Window:CreateTab("🌎 Worlds", nil) 
 local MiscSection = MiscTab:CreateSection("Misc")
 
 local Button = MiscTab:CreateButton({
-	Name = "‼️Secret World‼️",
+	Name = "‼️Secret World",
 	Callback = function()
 		game:GetService("ReplicatedStorage").Events.Teleport:FireServer("Secret World")
 	end,
 })
 
 local Button = MiscTab:CreateButton({
-	Name = "🧍Starter World🧍",
+	Name = "🧍Starter World",
 	Callback = function()
 		game:GetService("ReplicatedStorage").Events.Teleport:FireServer("Spawn")
 	end,
 })
 
 local Button = MiscTab:CreateButton({
-	Name = "🌀Magic World🌀",
+	Name = "🌀Magic World",
 	Callback = function()
 		game:GetService("ReplicatedStorage").Events.Teleport:FireServer("Magic")
 	end,
 })
 
 local Button = MiscTab:CreateButton({
-	Name = "🦕Jurassic World🦕",
+	Name = "🦕Jurassic World",
 	Callback = function()
 		game:GetService("ReplicatedStorage").Events.Teleport:FireServer("Jurassic")
 	end,
