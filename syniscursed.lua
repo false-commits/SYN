@@ -97,7 +97,7 @@ local MixTab = Window:CreateTab("❔What The...", nil)
 local MixSection = MixTab:CreateSection("Mix")
 
 local Button = MixTab:CreateButton({
-	Name = "🔴🔴VALORANT ACCCEEE🔴🔴",
+	Name = "📢🔴VALORANT ACCCEEE🔴📢",
     Callback = function()
         local ID = 7968074794
 
