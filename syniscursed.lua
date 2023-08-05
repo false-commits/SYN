@@ -4,7 +4,7 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 
 local Window = Rayfield:CreateWindow({
-	Name = "[PART 2!] Tapping Legends",
+	Name = "🔥[PART 2!] Tapping Legends",
 	LoadingTitle = "Tapping Legends",
 	LoadingSubtitle = "by SynLovesValorant",
 	ConfigurationSaving = {
