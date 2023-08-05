@@ -85,3 +85,10 @@ local Button = MiscTab:CreateButton({
 		game:GetService("ReplicatedStorage").Events.Teleport:FireServer("Jurassic")
 	end,
 })
+
+local Button = MiscTab:CreateButton({
+	Name = "🎯Summer World",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Events.Teleport:FireServer("Summer")
+    end,
+})
