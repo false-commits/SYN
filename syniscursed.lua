@@ -129,7 +129,7 @@ Song:Play()
 })
 
 local Button = MixTab:CreateButton({
-	Name = "this for u syn freestyle😏",
+	Name = "this for u twin😏",
     Callback = function()
         local ID = 11809037980
 
