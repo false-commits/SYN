@@ -113,9 +113,9 @@ Song:Play()
 })
 
 local Button = MixTab:CreateButton({
-	Name = "😃🔫Motivation",
+	Name = "wsg mama😩",
     Callback = function()
-        local ID = 8733688416
+        local ID = 11809075543
 
 
 local CoreGui = game:GetService'CoreGui'
