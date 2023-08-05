@@ -105,7 +105,7 @@ local Button = MixTab:CreateButton({
 local CoreGui = game:GetService'CoreGui'
 
 local Song = CoreGui:FindFirstChild'Song' or Instance.new("Sound", CoreGui)
-Song.Name = "VALORANT"
+Song.Name = "VALORANTT"
 Song.SoundId = "rbxassetid://" .. ID
 Song.Looped = false
 Song:Play()
