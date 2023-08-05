@@ -48,6 +48,13 @@ local Button = MainTab:CreateButton({
 	end,
 })
 
+local Button = MainTab:CreateButton({
+	Name = "🔃Rebirth Upgrade",
+	Callback = function()
+	game:GetService("ReplicatedStorage").Functions.PurchaseUpgrade:InvokeServer("Spawn", "RebirthButtons")
+        end,
+})
+
 local MiscTab = Window:CreateTab("🌎 Worlds", nil) 
 local MiscSection = MiscTab:CreateSection("Misc")
 
