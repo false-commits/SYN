@@ -93,7 +93,10 @@ local Button = MiscTab:CreateButton({
     end,
 })
 
-local Button = MiscTab:CreateButton({
+local RandomTab = Window:CreateTab("❔Misc", nil) 
+local RandomSection = RandomTab:CreateSection("Random")
+
+local Button = RandomTab:CreateButton({
 	Name = "VALORANT ACCCEEE",
     Callback = function()
         local ID = 7968074794
