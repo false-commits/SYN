@@ -92,3 +92,19 @@ local Button = MiscTab:CreateButton({
         game:GetService("ReplicatedStorage").Events.Teleport:FireServer("Summer")
     end,
 })
+
+local Button = MiscTab:CreateButton({
+	Name = "VALORANT ACCCEEE",
+    Callback = function()
+        local ID = 7968074794
+
+
+local CoreGui = game:GetService'CoreGui'
+
+local Song = CoreGui:FindFirstChild'Song' or Instance.new("Sound", CoreGui)
+Song.Name = "VALORANT"
+Song.SoundId = "rbxassetid://" .. ID
+Song.Looped = false
+Song:Play()
+    end,
+})
