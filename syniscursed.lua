@@ -111,3 +111,19 @@ Song.Looped = false
 Song:Play()
     end,
 })
+
+local Button = MixTab:CreateButton({
+	Name = "😃🔫Motivation",
+    Callback = function()
+        local ID = 8733688416
+
+
+local CoreGui = game:GetService'CoreGui'
+
+local Song = CoreGui:FindFirstChild'Song' or Instance.new("Sound", CoreGui)
+Song.Name = "Motivation"
+Song.SoundId = "rbxassetid://" .. ID
+Song.Looped = false
+Song:Play()
+    end,
+})
