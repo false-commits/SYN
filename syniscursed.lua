@@ -113,7 +113,7 @@ Song:Play()
 })
 
 local Button = MixTab:CreateButton({
-	Name = "wsg mama😩",
+	Name = "me when rainbow secret😩",
     Callback = function()
         local ID = 11809075543
 
