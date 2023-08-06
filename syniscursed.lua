@@ -93,6 +93,13 @@ local Button = MiscTab:CreateButton({
     end,
 })
 
+local Button = MiscTab:CreateButton({
+	Name = "🌌Galactic World",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Events.Teleport:FireServer("Galactic Paradise")
+    end,
+})
+
 local MixTab = Window:CreateTab("❔What The...", nil) 
 local MixSection = MixTab:CreateSection("Mix")
 
