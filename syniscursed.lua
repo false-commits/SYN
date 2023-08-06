@@ -1,12 +1,12 @@
 -- CREDIT RayField 
--- By HumanoidBosses
+-- By FalseCommits
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 
 local Window = Rayfield:CreateWindow({
 	Name = "🔥[PART 2!] Tapping Legends",
 	LoadingTitle = "Tapping Legends",
-	LoadingSubtitle = "by HumanoidBosses",
+	LoadingSubtitle = "by FalseCommits",
 	ConfigurationSaving = {
 		Enabled = false,
 		FolderName = nil, 
