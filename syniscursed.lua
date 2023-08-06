@@ -49,7 +49,7 @@ local Button = MainTab:CreateButton({
 })
 
 local Button = MainTab:CreateButton({
-	Name = "🔃Rebirth Upgrade",
+	Name = "🔃Rebirth Upgrades",
 	Callback = function()
 	game:GetService("ReplicatedStorage").Functions.PurchaseUpgrade:InvokeServer("Spawn", "RebirthButtons")
         end,
