@@ -1,12 +1,12 @@
 -- CREDIT RayField 
--- By KR47Y
+-- By lmmortalz on discord
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 
 local Window = Rayfield:CreateWindow({
-	Name = "Tapping Legends",
+	Name = "Tapping Legends | UPDATED 8/09/23",
 	LoadingTitle = "Tapping Legends",
-	LoadingSubtitle = "by KR47Y",
+	LoadingSubtitle = "by lmmortalz on discord",
 	ConfigurationSaving = {
 		Enabled = false,
 		FolderName = nil, 
@@ -18,7 +18,7 @@ local MainTab = Window:CreateTab("🏠 Auto Farm", nil)
 local MainSection = MainTab:CreateSection("Main")
 
 local Button = MainTab:CreateButton({
-	Name = "🖱️Fast Clicks",
+	Name = "🖱️| Fast Clicks",
 	Callback = function()
 		_G.enable = true;
 		while _G.enable == true do
@@ -29,27 +29,27 @@ local Button = MainTab:CreateButton({
 })
 
 local Button = MainTab:CreateButton({
-	Name = "🌴Max World Boost | 100 Rebirths Req.",
+	Name = "🎉| Max World Boost | 100 Rebirths Req.",
 	Callback = function()
 		_G.enable = true;
 		while _G.enable == true do
-			local ohString1 = "Summer"
+		local ohString1 = "2M"
 
-			game:GetService("ReplicatedStorage").Events.SetWorldBoost:FireServer(ohString1)
+game:GetService("ReplicatedStorage").Events.SetWorldBoost:FireServer(ohString1)
 			task.wait(1)
 		end
 	end,
 })
 
 local Button = MainTab:CreateButton({
-	Name = "⬆️Mastery Rank Up",
+	Name = "⬆️| Mastery Rank Up",
 	Callback = function()
 		game:GetService("ReplicatedStorage").Functions.IncreaseMastery:InvokeServer()
 	end,
 })
 
 local Button = MainTab:CreateButton({
-	Name = "🔃Rebirth Upgrades",
+	Name = "🔃| Rebirth Upgrades",
 	Callback = function()
 	game:GetService("ReplicatedStorage").Functions.PurchaseUpgrade:InvokeServer("Spawn", "RebirthButtons")
         end,
@@ -59,44 +59,58 @@ local MiscTab = Window:CreateTab("🌎 Worlds", nil)
 local MiscSection = MiscTab:CreateSection("Misc")
 
 local Button = MiscTab:CreateButton({
-	Name = "‼️Secret World",
+	Name = "‼️| Secret World",
 	Callback = function()
 		game:GetService("ReplicatedStorage").Events.Teleport:FireServer("Secret World")
 	end,
 })
 
 local Button = MiscTab:CreateButton({
-	Name = "🧍Starter World",
+	Name = "🧍| Starter World",
 	Callback = function()
 		game:GetService("ReplicatedStorage").Events.Teleport:FireServer("Spawn")
 	end,
 })
 
 local Button = MiscTab:CreateButton({
-	Name = "🌀Magic World",
+	Name = "🌀| Magic World",
 	Callback = function()
 		game:GetService("ReplicatedStorage").Events.Teleport:FireServer("Magic")
 	end,
 })
 
 local Button = MiscTab:CreateButton({
-	Name = "🦕Jurassic World",
+	Name = "🦕| Jurassic World",
 	Callback = function()
 		game:GetService("ReplicatedStorage").Events.Teleport:FireServer("Jurassic")
 	end,
 })
 
 local Button = MiscTab:CreateButton({
-	Name = "🎯Summer World",
+	Name = "🎯| Summer World",
     Callback = function()
         game:GetService("ReplicatedStorage").Events.Teleport:FireServer("Summer")
     end,
 })
 
 local Button = MiscTab:CreateButton({
-	Name = "🌌Galactic World",
+	Name = "🌌| Galactic World",
     Callback = function()
         game:GetService("ReplicatedStorage").Events.Teleport:FireServer("Galactic Paradise")
+    end,
+})
+
+local Button = MiscTab:CreateButton({
+	Name = "🎉| 2M World | *NEW!*",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Events.Teleport:FireServer("2M")
+    end,
+})
+
+local Button = MiscTab:CreateButton({
+	Name = "👻| Spooky World | *NEW!*",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Events.Teleport:FireServer("Spooky")
     end,
 })
 
