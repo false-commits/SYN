@@ -29,7 +29,7 @@ local Button = MainTab:CreateButton({
 })
 
 local Button = MainTab:CreateButton({
-	Name = "🎉| Max World Boost | 100 Rebirths Req.",
+	Name = "🎉| Event World Boost x50 | 100 Rebirths Req.",
 	Callback = function()
 		_G.enable = true;
 		while _G.enable == true do
