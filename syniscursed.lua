@@ -2,7 +2,115 @@
 -- By lmmortalz on discord
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
+local isEnabled = false
 local isToggled = false
+local WorldBoostOn = false
+local EventOn = false
+local PotionOn = false
+
+function Potions()
+    PotionOn = not PotionOn
+    if PotionOn then
+		_G.enable = true;
+while _G.enable == true do
+local ohString1 = "Click"
+
+game:GetService("ReplicatedStorage").Events.UsePotion:FireServer(ohString1)
+
+local ohString1 = "Gem"
+
+game:GetService("ReplicatedStorage").Events.UsePotion:FireServer(ohString1)
+
+local ohString1 = "Luck"
+
+game:GetService("ReplicatedStorage").Events.UsePotion:FireServer(ohString1)
+
+local ohString1 = "Rebirth"
+
+game:GetService("ReplicatedStorage").Events.UsePotion:FireServer(ohString1)
+ task.wait(1800)
+end
+			else
+_G.enable = false;
+while _G.enable == true do
+local ohString1 = "Click"
+				
+game:GetService("ReplicatedStorage").Events.UsePotion:FireServer(ohString1)
+				
+local ohString1 = "Gem"
+				
+game:GetService("ReplicatedStorage").Events.UsePotion:FireServer(ohString1)
+				
+local ohString1 = "Luck"
+				
+game:GetService("ReplicatedStorage").Events.UsePotion:FireServer(ohString1)
+				
+local ohString1 = "Rebirth"
+				
+game:GetService("ReplicatedStorage").Events.UsePotion:FireServer(ohString1)
+task.wait(1800)
+				end
+			end
+		end
+
+function Event2M()
+    EventOn = not EventOn
+    if EventOn then
+		_G.enable = true;
+		while _G.enable == true do
+		local ohString1 = "2M"
+
+game:GetService("ReplicatedStorage").Events.SetWorldBoost:FireServer(ohString1)
+			task.wait(1)
+		end
+			else
+		_G.enable = false;
+				while _G.enable == true do
+				local ohString1 = "2M"
+		
+		game:GetService("ReplicatedStorage").Events.SetWorldBoost:FireServer(ohString1)
+					task.wait(1)
+				end
+			end
+		end
+
+function Spooky()
+    WorldBoostOn = not WorldBoostOn
+    if WorldBoostOn then
+		_G.enable = true;
+		while _G.enable == true do
+		local ohString1 = "Spooky"
+
+game:GetService("ReplicatedStorage").Events.SetWorldBoost:FireServer(ohString1)
+			task.wait(1)
+		end
+			else
+		_G.enable = false;
+		while _G.enable == true do
+		local ohString1 = "Spooky"
+		
+game:GetService("ReplicatedStorage").Events.SetWorldBoost:FireServer(ohString1)
+			task.wait(1)
+				end
+			end
+		end
+
+function Mastery()
+    isEnabled = not isEnabled
+    if isEnabled then
+		_G.enable = true;
+		while _G.enable == true do
+		game:GetService("ReplicatedStorage").Functions.IncreaseMastery:InvokeServer()
+		 task.wait()
+		end
+			else
+		_G.enable = false;
+		while _G.enable == true do
+		game:GetService("ReplicatedStorage").Functions.IncreaseMastery:InvokeServer()
+		task.wait()
+				end
+			end
+		end
 
 function toggle()
     isToggled = not isToggled
@@ -50,41 +158,35 @@ end)
 	end,
 })
 
-local Button = MainTab:CreateButton({
+local Toggle = MainTab:CreateToggle({
 	Name = "🎉| Event World Boost x50 | 100 Rebirths Req.",
-	Callback = function()
-		_G.enable = true;
-		while _G.enable == true do
-		local ohString1 = "2M"
-
-game:GetService("ReplicatedStorage").Events.SetWorldBoost:FireServer(ohString1)
-			task.wait(1)
-		end
+	CurrentValue = nil,
+	Flag = "Toggle1",
+	Callback = function(EventOn)
+		Event2M()
 	end,
-})
-
-local Button = MainTab:CreateButton({
-	Name = "👻| Spooky World Boost x250",
-	Callback = function()
-		_G.enable = true;
-		while _G.enable == true do
-		local ohString1 = "Spooky"
-
-game:GetService("ReplicatedStorage").Events.SetWorldBoost:FireServer(ohString1)
-			task.wait(1)
-		end
-	end,
-})
-
-local Button = MainTab:CreateButton({
-	Name = "⬆️| Mastery Rank Up",
-	Callback = function()
-		game:GetService("ReplicatedStorage").Functions.IncreaseMastery:InvokeServer()
-	end,
-})
+ })
 
 local Toggle = MainTab:CreateToggle({
-	Name = "🔃| Auto Max Rebirth",
+	Name = "👻| Spooky World Boost x250",
+	CurrentValue = nil,
+	Flag = "Toggle1",
+	Callback = function(WorldBoostOn)
+		Spooky()
+	end,
+ })
+
+local Toggle = MainTab:CreateToggle({
+	Name = "⬆️| Auto Mastery Rank Up",
+	CurrentValue = nil,
+	Flag = "Toggle1",
+	Callback = function(isEnabled)
+		Mastery()
+	end,
+ })
+
+local Toggle = MainTab:CreateToggle({
+	Name = "🔃| Auto Buy Max Rebirth",
 	CurrentValue = nil,
 	Flag = "Toggle1",
 	Callback = function(isToggled)
@@ -92,15 +194,24 @@ local Toggle = MainTab:CreateToggle({
 	end,
  })
 
+ local Toggle = MainTab:CreateToggle({
+	Name = "🧪| Auto Use Potions | 30mins",
+	CurrentValue = nil,
+	Flag = "Toggle1",
+	Callback = function(PotionOn)
+		Potions()
+	end,
+ })
+
 local Button = MainTab:CreateButton({
-	Name = "🔃| Rebirth Upgrades",
+	Name = "🔃| Buy 1 Rebirth Upgrade(s)",
 	Callback = function()
 	game:GetService("ReplicatedStorage").Functions.PurchaseUpgrade:InvokeServer("Spawn", "RebirthButtons")
         end,
 })
 
 local MiscTab = Window:CreateTab("🌎 Worlds", nil) 
-local MiscSection = MiscTab:CreateSection("Misc")
+local MiscSection = MiscTab:CreateSection("Teleports")
 
 local Button = MiscTab:CreateButton({
 	Name = "‼️| Secret World",
@@ -155,56 +266,5 @@ local Button = MiscTab:CreateButton({
 	Name = "👻| Spooky World | *NEW!*",
     Callback = function()
         game:GetService("ReplicatedStorage").Events.Teleport:FireServer("Spooky")
-    end,
-})
-
-local MixTab = Window:CreateTab("❔What The...", nil) 
-local MixSection = MixTab:CreateSection("Mix")
-
-local Button = MixTab:CreateButton({
-	Name = "📢🔴VALORANT ACCCEEE🔴📢",
-    Callback = function()
-        local ID = 7968074794
-
-
-local CoreGui = game:GetService'CoreGui'
-
-local Song = CoreGui:FindFirstChild'Song' or Instance.new("Sound", CoreGui)
-Song.Name = "VALORANTT"
-Song.SoundId = "rbxassetid://" .. ID
-Song.Looped = false
-Song:Play()
-    end,
-})
-
-local Button = MixTab:CreateButton({
-	Name = "me when rainbow secret😩",
-    Callback = function()
-        local ID = 11809075543
-
-
-local CoreGui = game:GetService'CoreGui'
-
-local Song = CoreGui:FindFirstChild'Song' or Instance.new("Sound", CoreGui)
-Song.Name = "Motivation"
-Song.SoundId = "rbxassetid://" .. ID
-Song.Looped = false
-Song:Play()
-    end,
-})
-
-local Button = MixTab:CreateButton({
-	Name = "im max(real)",
-    Callback = function()
-        local ID = 7307468961
-
-
-local CoreGui = game:GetService'CoreGui'
-
-local Song = CoreGui:FindFirstChild'Song' or Instance.new("Sound", CoreGui)
-Song.Name = "Motivation"
-Song.SoundId = "rbxassetid://" .. ID
-Song.Looped = false
-Song:Play()
     end,
 })
