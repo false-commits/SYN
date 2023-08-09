@@ -20,11 +20,18 @@ local MainSection = MainTab:CreateSection("Main")
 local Button = MainTab:CreateButton({
 	Name = "🖱️| Fast Clicks",
 	Callback = function()
-		_G.enable = true;
-		while _G.enable == true do
-			game:GetService("ReplicatedStorage").Events.Click:FireServer()
-			task.wait()
-		end
+		local RunService = game:GetService("RunService")
+local Timer = 0
+local TimerMax = 0
+
+RunService.Heartbeat:Connect(function(Delta)
+	Timer += Delta
+	
+	if Timer >= TimerMax then
+		Timer = 0
+		game:GetService("ReplicatedStorage").Events.Click:FireServer()
+	end
+end)
 	end,
 })
 
