@@ -49,6 +49,19 @@ game:GetService("ReplicatedStorage").Events.SetWorldBoost:FireServer(ohString1)
 })
 
 local Button = MainTab:CreateButton({
+	Name = "👻| Spooky World Boost x250",
+	Callback = function()
+		_G.enable = true;
+		while _G.enable == true do
+		local ohString1 = "Spooky"
+
+game:GetService("ReplicatedStorage").Events.SetWorldBoost:FireServer(ohString1)
+			task.wait(1)
+		end
+	end,
+})
+
+local Button = MainTab:CreateButton({
 	Name = "⬆️| Mastery Rank Up",
 	Callback = function()
 		game:GetService("ReplicatedStorage").Functions.IncreaseMastery:InvokeServer()
