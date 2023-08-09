@@ -2,6 +2,21 @@
 -- By lmmortalz on discord
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
+local isToggled = false
+
+function toggle()
+    isToggled = not isToggled
+    if isToggled then
+	local ohBoolean1 = true
+
+	game:GetService("ReplicatedStorage").Events.ActivateAutoRebirth:FireServer(ohBoolean1)
+			else
+	local ohBoolean1 = false
+
+	game:GetService("ReplicatedStorage").Events.ActivateAutoRebirth:FireServer(ohBoolean1)
+			end
+		end
+
 
 local Window = Rayfield:CreateWindow({
 	Name = "Tapping Legends | UPDATED 8/09/23",
@@ -67,6 +82,15 @@ local Button = MainTab:CreateButton({
 		game:GetService("ReplicatedStorage").Functions.IncreaseMastery:InvokeServer()
 	end,
 })
+
+local Toggle = MainTab:CreateToggle({
+	Name = "🔃| Auto Max Rebirth",
+	CurrentValue = nil,
+	Flag = "Toggle1",
+	Callback = function(isToggled)
+		toggle()
+	end,
+ })
 
 local Button = MainTab:CreateButton({
 	Name = "🔃| Rebirth Upgrades",
