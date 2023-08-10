@@ -1,5 +1,5 @@
 -- CREDIT RayField 
--- By lmmortalz on discord
+-- By falsecommits
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local isEnabled = false
