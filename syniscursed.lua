@@ -147,7 +147,7 @@ function toggle()
 local Window = Rayfield:CreateWindow({
 	Name = "Tapping Legends | UPDATED 8/10/23",
 	LoadingTitle = "Tapping Legends",
-	LoadingSubtitle = "by lmmortalz on discord",
+	LoadingSubtitle = "by falsecommits",
 	ConfigurationSaving = {
 		Enabled = false,
 		FolderName = nil, 
