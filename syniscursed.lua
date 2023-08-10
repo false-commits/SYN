@@ -7,6 +7,24 @@ local isToggled = false
 local WorldBoostOn = false
 local EventOn = false
 local PotionOn = false
+local LuckOn = false
+
+function Luck()
+	LuckOn = not LuckOn
+	if LuckOn then
+	_G.enable = true;
+			while _G.enable == true do
+game:GetService("ReplicatedStorage").Functions.PurchaseLuckUpgrader:InvokeServer()
+		task.wait(1)
+end
+		else
+_G.enable = false;
+	while _G.enable == true do
+game:GetService("ReplicatedStorage").Functions.PurchaseLuckUpgrader:InvokeServer()
+						task.wait(1)
+					end
+				end
+			end
 
 function Potions()
     PotionOn = not PotionOn
@@ -74,12 +92,12 @@ game:GetService("ReplicatedStorage").Events.SetWorldBoost:FireServer(ohString1)
 			end
 		end
 
-function Spooky()
+function Galactic()
     WorldBoostOn = not WorldBoostOn
     if WorldBoostOn then
 		_G.enable = true;
 		while _G.enable == true do
-		local ohString1 = "Spooky"
+		local ohString1 = "Galactic Paradise"
 
 game:GetService("ReplicatedStorage").Events.SetWorldBoost:FireServer(ohString1)
 			task.wait(1)
@@ -87,7 +105,7 @@ game:GetService("ReplicatedStorage").Events.SetWorldBoost:FireServer(ohString1)
 			else
 		_G.enable = false;
 		while _G.enable == true do
-		local ohString1 = "Spooky"
+		local ohString1 = "Galactic Paradise"
 		
 game:GetService("ReplicatedStorage").Events.SetWorldBoost:FireServer(ohString1)
 			task.wait(1)
@@ -127,7 +145,7 @@ function toggle()
 
 
 local Window = Rayfield:CreateWindow({
-	Name = "Tapping Legends | UPDATED 8/09/23",
+	Name = "Tapping Legends | UPDATED 8/10/23",
 	LoadingTitle = "Tapping Legends",
 	LoadingSubtitle = "by lmmortalz on discord",
 	ConfigurationSaving = {
@@ -168,11 +186,11 @@ local Toggle = MainTab:CreateToggle({
  })
 
 local Toggle = MainTab:CreateToggle({
-	Name = "👻| Spooky World Boost x250",
+	Name = "🌌| Galactic World Boost x1000",
 	CurrentValue = nil,
 	Flag = "Toggle1",
 	Callback = function(WorldBoostOn)
-		Spooky()
+		Galactic()
 	end,
  })
 
@@ -186,7 +204,7 @@ local Toggle = MainTab:CreateToggle({
  })
 
 local Toggle = MainTab:CreateToggle({
-	Name = "🔃| Auto Buy Max Rebirth",
+	Name = "🔃| Auto Buy Rebirths",
 	CurrentValue = nil,
 	Flag = "Toggle1",
 	Callback = function(isToggled)
@@ -200,6 +218,15 @@ local Toggle = MainTab:CreateToggle({
 	Flag = "Toggle1",
 	Callback = function(PotionOn)
 		Potions()
+	end,
+ })
+
+ local Toggle = MainTab:CreateToggle({
+	Name = "🍀| Auto Buy Luck Upgrades",
+	CurrentValue = nil,
+	Flag = "Toggle1",
+	Callback = function(LuckOn)
+		Luck()
 	end,
  })
 
@@ -249,7 +276,14 @@ local Button = MiscTab:CreateButton({
 })
 
 local Button = MiscTab:CreateButton({
-	Name = "🌌| Galactic World",
+	Name = "🚀| Galaxy | *NEW!*",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Events.Teleport:FireServer("Galaxy")
+    end,
+})
+
+local Button = MiscTab:CreateButton({
+	Name = "🌌| Galactic Paradise | *NEW!*",
     Callback = function()
         game:GetService("ReplicatedStorage").Events.Teleport:FireServer("Galactic Paradise")
     end,
